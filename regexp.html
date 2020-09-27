@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Author: Nicholas Schoessling
+        Class:  Software Engineering
+        Project: Lab 2 / Regular Expression Tester
+        Description: This is my Regular Expression Tester application and is being submitted as part of Lab 2.
+        -->
+        <title>Nicholas Schoessling's regular expression tester</title>
+
+        <!--Embedded css code-->
+        <style>
+            body {
+                background-color: #86BBBD;
+            }
+            h1 {
+                color: #533747;
+                text-align: center;
+            }
+            h3 {
+                color: #5F506B;
+                text-align: center;
+            }
+            p {
+                color: #6A6B83;
+            }
+        </style>
+
+        <!--Javascript testing code-->
+        <script>
+            function testIt() {
+                var enteredString = document.getElementById("tString").value;
+                var enteredReg = document.getElementById("reeEx").value;
+                //RegExp needed to initialize the testing function
+                var res = RegExp(enteredReg);
+                document.getElementById("result").value = res.test(enteredString);
+            }
+        </script>
+    </head>
+
+<body>
+    <h1>Welcome to my regular expression tester</h1>
+    <h3>To test if your string is equal to the regular expression: enter both of them in and press the test button to see if it is true or false.</h3>
+    <br>
+    <p><b>Test String</b></p>
+    <input type="text" id="tString" name="tString"><br>
+    <p><b>Regular Expression</b></p>
+    <input type="text" id="reeEx" name="reeEx"><br><br>
+    <!--Button that calls javascript function-->
+    <button type="button" onclick="testIt(reeEx,tString)" >Does it match?</button><br> 
+    <p><b>Results</b></p>
+    <input id="result" type="text" value="" disabled>
+</body>
+</html>
